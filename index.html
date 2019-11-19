@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Jeannette Bang - ©2019 by Gnax</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet"/>
+  <script src="bang.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #FFF;
+      font-family: Roboto, sans-serif;
+      text-align: center;
+    }
+    #Jeannette {
+      width: 50vw;
+    }
+    #Beat {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #888;
+    }
+    #debugTbl td {
+      font-size: 8px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+    }
+    input[type=range] {
+      width: 80vw;
+    }
+    .beatOn {
+      background-color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bang Jeannette Bang</h1>
+  <h2>Bang Jeannettes head to the beat</h2>
+  <center id="ui_cont"><button id="stbutt" onclick="init()">Load & Start</button></center>
+  <br/>
+  <canvas id="Jeannette" video="Nonnen.mp4" audio="Jeannette.mp3"></canvas>
+  <p>Hey you !! Move your mouse up and down to bang their heads</p>
+  <!--
+  <table cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>Beat:</td>
+      <td id="Beat"></td>
+      <td>Score:</td>
+      <td id="Score">0</td>
+    </tr>
+  </table>
+
+  <table id="debugTbl" border="1" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <script>
+      for (var i = 0; i<32; i++) {
+        document.writeln("<td></td>");
+      }
+      </script>
+    </tr>
+  </table>
+
+  <input id="dbgrng" type="range" min="0" max="255" step="1" oninput="dbgrng_out.innerText = this.value;">
+  <span id="dbgrng_out"></span><br/>
+  <input id="dbg_freq" type="range" min="20" max="20000" step="1" oninput="dbg_freq_out.innerText = this.value;">
+  <span id="dbg_freq_out"></span><br/>
+  <input id="dbg_Q" type="range" min="0.0" max="1.0" step="0.01" oninput="dbg_Q_out.innerText = this.value;">
+  <span id="dbg_Q_out"></span><br/>
+  <input id="dbg_gain" type="range" min="0.0" max="1.0" step="0.01" oninput="dbg_gain_out.innerText = this.value;">
+  <span id="dbg_gain_out"></span><br/>
+  <select id="dbg_type">
+    <option>lowpass</option>
+    <option>highpass</option>
+    <option>bandpass</option>
+    <option>lowshelf</option>
+    <option>highshelf</option>
+    <option>peaking</option>
+    <option>notch</option>
+    <option>allpass</option>
+  </select>
+  -->
+
+  <script>
+  function init() {
+    Bang.init(Jeannette);
+  }
+  </script>
+</body>
+</html>
