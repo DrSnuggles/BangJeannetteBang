@@ -6,81 +6,56 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet"/>
   <script src="bang.js"></script>
   <style>
+    @font-face {
+      font-family: MaisonNeue-Book;
+      src: url("MaisonNeue-Book.woff") format("woff");
+    }
     body {
       background-color: #000;
       color: #FFF;
-      font-family: Roboto, sans-serif;
+      font-family: MaisonNeue-Book, sans-serif;
       text-align: center;
+    }
+    a,
+    a:hover,
+    a:visited {
+      color: #FF0;
+      text-decoration: none;
     }
     #Jeannette {
-      width: 50vw;
-    }
-    #Beat {
-      width: 50px;
-      height: 50px;
-      border: 1px solid #888;
-    }
-    #debugTbl td {
-      font-size: 8px;
-      width: 30px;
-      height: 30px;
-      text-align: center;
-    }
-    input[type=range] {
       width: 80vw;
+      max-width: 800px;
     }
-    .beatOn {
-      background-color: #FFF;
+    @media only screen and (orientation: landscape) {
+      #Jeannette {
+        width: 40vw;
+      }
+    }
+    #Logo {
+      width: 120px;
+    }
+    button {
+      border: 2px solid #FFF;
+      background-color: #000;
+      font-family: MaisonNeue-Book;
+      font-size: 20px;
+      color: #FFF;
+      padding: 5px;
+      cursor: pointer;
+    }
+    .udcursor {
+      cursor: ns-resize;
     }
   </style>
 </head>
 <body>
-  <h1>Bang Jeannette Bang</h1>
-  <h2>Bang Jeannettes head to the beat</h2>
-  <center id="ui_cont"><button id="stbutt" onclick="init()">Load & Start</button></center>
+  <h1>BANG JEANNETTE BANG</h1>
+  <center id="ui_cont"><a href="javascript:init()"><button id="stbutt">START</button></a></center>
   <br/>
   <canvas id="Jeannette" video="Nonnen.mp4" audio="Jeannette.mp3"></canvas>
-  <p>Hey you !! Move your mouse up and down to bang their heads</p>
-  <!--
-  <table cellspacing="0" cellpadding="0" align="center">
-    <tr>
-      <td>Beat:</td>
-      <td id="Beat"></td>
-      <td>Score:</td>
-      <td id="Score">0</td>
-    </tr>
-  </table>
-
-  <table id="debugTbl" border="1" cellspacing="0" cellpadding="0" align="center">
-    <tr>
-      <script>
-      for (var i = 0; i<32; i++) {
-        document.writeln("<td></td>");
-      }
-      </script>
-    </tr>
-  </table>
-
-  <input id="dbgrng" type="range" min="0" max="255" step="1" oninput="dbgrng_out.innerText = this.value;">
-  <span id="dbgrng_out"></span><br/>
-  <input id="dbg_freq" type="range" min="20" max="20000" step="1" oninput="dbg_freq_out.innerText = this.value;">
-  <span id="dbg_freq_out"></span><br/>
-  <input id="dbg_Q" type="range" min="0.0" max="1.0" step="0.01" oninput="dbg_Q_out.innerText = this.value;">
-  <span id="dbg_Q_out"></span><br/>
-  <input id="dbg_gain" type="range" min="0.0" max="1.0" step="0.01" oninput="dbg_gain_out.innerText = this.value;">
-  <span id="dbg_gain_out"></span><br/>
-  <select id="dbg_type">
-    <option>lowpass</option>
-    <option>highpass</option>
-    <option>bandpass</option>
-    <option>lowshelf</option>
-    <option>highshelf</option>
-    <option>peaking</option>
-    <option>notch</option>
-    <option>allpass</option>
-  </select>
-  -->
-
+  <p>HEY DU !! BEWEG DIE MAUS RAUF UND RUNTER UM SIE BANGEN ZU LASSEN</p>
+  <p><a href="http://grandfilm.de/jeannette/" target="_blank">JEANNETTE – AB 25. DEZEMBER 2019 IM KINO</a></p>
+  <a href="http://grandfilm.de/" target="_blank"><img id="Logo" src="Grandfilm.png" alt="Logo" title="Grandfilm"/></a>
   <script>
   function init() {
     Bang.init(Jeannette);
