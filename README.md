@@ -10,3 +10,4 @@ Bang Jeannettes head to the beat
 ## Next Steps
 - detect beat, heavy metal is not that easy to detect...
 - score movement, extreme (max/min or bottom/top) should match beat withing given timeframe
+- save & load score
