@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title>Jeannette Bang - ©2019 by Gnax</title>
-  <script src="bang.js"></script>
+  <script src="bang.min.js"></script>
   <style>
     @font-face {
       font-family: MaisonNeue-Book;
@@ -48,9 +48,38 @@
     .bang-container {
       display: none;
     }
+    .bottom-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 2px solid #FFF;
+      padding: 5px;
+    }
+    .bordered {
+      border: 2px solid #FFF;
+      padding: 5px;
+    }
+    .spacer {
+      display: inline-block;
+      min-width: 30px;
+    }
   </style>
 </head>
 <body>
+
+  <h1>BANG JEANNETTE BANG</h1>
+  <center>
+    BANGS: <span id="ui_score"></span>
+    <span class="spacer">&nbsp;</span>
+    <span id="ui_cont"><a href="javascript:init()"><button id="stbutt">START</button></a></span>
+
+  </center>
+  <br/>
+  <canvas id="Jeannette" width="900" height="500"></canvas>
+  <p>HEY DU !! BEWEG DIE MAUS RAUF UND RUNTER UM SIE BANGEN ZU LASSEN</p>
+  <p><a href="http://grandfilm.de/jeannette/" target="_blank">JEANNETTE – AB 25. DEZEMBER 2019 IM KINO</a></p>
+  <a href="http://grandfilm.de/" target="_blank"><img id="Logo" src="Grandfilm.png" alt="Logo" title="Grandfilm"/></a>
+
   <span class="bang-container">
     <img src="img/100/0.jpg"/>
     <img src="img/100/1.jpg"/>
@@ -68,20 +97,16 @@
     <audio id="AudioBang">
       <source src="Jeannette.mp3"/>
     </audio>
-    <script>
-    function init() {
-      Bang.init(Jeannette);
-    }
-    </script>
   </span>
-
-  <h1>BANG JEANNETTE BANG</h1>
-  <center id="ui_cont"><a href="javascript:init()"><button id="stbutt">START</button></a></center>
-  <br/>
-  <canvas id="Jeannette" width="900" height="500"></canvas>
-  <p>HEY DU !! BEWEG DIE MAUS RAUF UND RUNTER UM SIE BANGEN ZU LASSEN</p>
-  <p><a href="http://grandfilm.de/jeannette/" target="_blank">JEANNETTE – AB 25. DEZEMBER 2019 IM KINO</a></p>
-  <a href="http://grandfilm.de/" target="_blank"><img id="Logo" src="Grandfilm.png" alt="Logo" title="Grandfilm"/></a>
+  <script>
+  (function() {
+    // wait till img0 is loaded
+    Bang.init(Jeannette);
+  })();
+  function init() {
+    Bang.restart();
+  }
+  </script>
 
 </body>
 </html>
